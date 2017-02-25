@@ -3,8 +3,8 @@
 	
 	angular.module('cricketApp')
 		.controller('playController', constructor);
-		    constructor.$inject = ['$stateParams','StatisticService','$scope','$window','$state'];
-		    function constructor($stateParams,StatisticService,$scope,$window,$state) {
+		    constructor.$inject = ['$stateParams','StatisticFactory','$scope','$window','$state'];
+		    function constructor($stateParams,StatisticFactory,$scope,$window,$state) {
 		    	var vm = this;
 		    	vm.over_to_be_played = 1;
 		    	var gameData = [];
@@ -19,13 +19,13 @@
 		        }		      	
 
 		      	vm.newGame = function(){
-		      		allmatchData = StatisticService.newgame();
+		      		allmatchData = StatisticFactory.newgame();
 		      		localStorage.setItem("matchData", JSON.stringify(allmatchData));
 		      		vm.resetData();
 		      	}
 		      
 		      	vm.bowl = function(){
-		      		gameData = StatisticService.play();
+		      		gameData = StatisticFactory.play();
 		      		console.log(gameData);
 		      		vm.getMatchId();
 		      		localStorage.setItem("gameData", JSON.stringify(gameData));
@@ -81,7 +81,7 @@
 
 		 		vm.getMatchId();
 		 		vm.get_old_and_currentMatch_history();
-		      	vm.getStats = StatisticService.get($stateParams.match,$stateParams.ball,$stateParams.over,vm.matchData,vm.gameData);
+		      	vm.getStats = StatisticFactory.get($stateParams.match,$stateParams.ball,$stateParams.over,vm.matchData,vm.gameData);
 		      	console.log('getStats',vm.getStats); 
 		    }
 

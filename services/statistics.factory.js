@@ -2,9 +2,9 @@
 'use strict';
 	
 	angular.module('cricketApp')
-		.service('StatisticService', constructor);
-		    constructor.$inject = ['$filter'];
-		    function constructor($filter,$window) {
+		.factory('StatisticFactory', factory);
+		    factory.$inject = ['$filter'];
+		    function factory($filter,$window) {
 
 		    	if(JSON.parse(localStorage.getItem("matchData")) == null){
 		    		var matches = [];

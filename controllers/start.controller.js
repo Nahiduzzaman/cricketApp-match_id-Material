@@ -3,8 +3,8 @@
 
 	angular.module('cricketApp')
 	    .controller('startController', constructor);
-	    	constructor.$inject = ['StatisticService','TeamService','$scope','$timeout'];
-	    	function constructor(StatisticService,TeamService,$scope,$timeout) {
+	    	constructor.$inject = ['StatisticFactory','TeamService','$scope','$timeout'];
+	    	function constructor(StatisticFactory,TeamService,$scope,$timeout) {
 	    		var vm = this;
 	    		vm.teamList = TeamService.getTeams();
 	    		console.log(vm.teamList);
