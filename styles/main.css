@@ -1,0 +1,91 @@
+
+body {
+  padding: 0;
+}
+
+.sidebyside{
+  display: inline-block;
+  width: 100%;
+}
+
+form { margin: 0 auto; width: 36% }
+
+.score{
+  font-size: 25px;
+  display: inline-block;
+  float: left;
+}
+
+.history{
+  display: inline-block;
+  float:right;
+  width: 45%
+}
+
+.btn-warning {
+    color: #fcf8e3;
+    background-color: #f05d4e;
+    border-color: #eea236;
+}
+
+.over{
+  margin: inherit;
+}
+.over li{
+  display: inline;
+  padding: 10px;
+}
+p{
+  margin: 10px 0 0 10px;
+}
+
+.success{
+  background: #16bd16 !important;
+  color: white !important;
+}
+
+.finish{
+  background-color: rgb(129, 80, 185) !important;
+  color: white !important;
+}
+
+table.md-table th.md-column {
+    vertical-align: middle;
+    text-align: center;
+}
+
+table.md-table td.md-cell {
+    vertical-align: middle;
+    text-align: center;
+    color: rgba(0,0,0,.87);
+    font-weight: 600;
+    font-size: 18px;
+    border-top: 1px rgba(0,0,0,.12) solid;
+}
+
+table.md-table th.md-column {
+    color: rgba(255,255,255,0.87);
+    font-size: 17px;
+    font-weight: 700;
+    white-space: nowrap;
+    background: rgb(82, 25, 11);
+}
+
+.ball{
+    /*background: #52190b;
+    color: white;
+    padding: 9px;
+    border-radius: 50%;*/
+    font-weight: 700;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+
+md-select{
+    min-width: 350px;
+    text-align: center;
+    font-size: 21px;
+}

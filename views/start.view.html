@@ -1,0 +1,39 @@
+﻿
+
+<div class="md-padding">
+
+    <div layout="column" layout-align="center center" style="padding:80px" ng-cloak>
+
+       <div layout="column" ng-hide="vm.showCoin">
+            <center><img style="width: 50%" src="styles/images/animation.gif"></center>
+       </div>
+
+       <md-card ng-if="vm.showCoin" style="padding: 40px" class="md-whiteframe-24dp">
+            <div layout="column" layout-align="center center">
+                <md-select placeholder="Country 1" ng-model="vm.game.country1">
+                    <md-option ng-repeat="team in vm.teamList" value="{{team}}">{{team}}</md-option>
+                </md-select>
+            </div>
+            <b style="text-align: center;margin-right: 25px;">VS.</b>
+            <div layout="column" layout-align="center center">
+                <md-select placeholder="Country 1" ng-model="vm.game.country2">
+                    <md-option ng-repeat="team in vm.teamList" value="{{team}}">{{team}}</md-option>
+                </md-select>
+            </div>
+
+            <p ng-if="vm.showTossResult">
+                Very cloudy condition!, <b>{{vm.country_to_bowl}}</b> has won <br> the toss and choose to bowl first
+            </p>
+
+            <md-button ng-hide="vm.hideTossButton || vm.showTossResult"
+                       class="md-raised md-primary"
+                       ng-click="vm.coinToss(vm.game)">Toss</md-button>
+            <md-button ng-show="vm.showTossResult" 
+                        class="md-raised success" 
+                        href="#/play/{{vm.match_id}}/0/0" 
+                        ng-click="vm.setGame(vm.game)">Play</md-button>
+        </md-card>
+    
+    </div>
+
+</div>

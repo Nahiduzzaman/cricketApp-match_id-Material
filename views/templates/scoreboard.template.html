@@ -1,0 +1,20 @@
+<div class="score">
+    <b ng-if="!vm.getStats">{{vm.teamData.to_bat | uppercase}}: 0/0</b>
+    <b ng-if="vm.getStats">{{vm.teamData.to_bat | uppercase}}: {{vm.getStats.total_run}}/{{vm.getStats.wicket}}</b><br>
+    <label ng-if="!vm.getStats"><b>Overs: 0.0</b></label>
+    <label ng-if="vm.getStats"><b>Overs: {{vm.getStats.over}}.{{vm.getStats.ball}}</b></label><br>
+    <label><b>Bowling:</b></label>
+    <b>{{vm.teamData.to_bowl | uppercase}}</b>
+</div>
+
+
+<!-- <md-card class="history">
+	<div style="background: dimgray;color: white;text-align: center;"><span>Previous Matches</span></div>
+	<div style="overflow:auto;height:68px;text-align:center;">            
+		<md-list-item style="margin-top: -15px;margin-bottom: -25px;" ng-repeat="item in vm.matchData" class="secondary-button-padding">
+		    <a href="#/play/{{item.gameData[item.gameData.length-1].match_id}}/{{item.gameData[item.gameData.length-1].over}}/{{item.gameData[item.gameData.length-1].ball}}" 
+		    	style="height: 33px;border-bottom: 1px solid rgba(0,0,0,.14);margin:0px;width: 100%;">
+		    <b>{{item.teamData.country1}} vs {{item.teamData.country2}}</b></a>
+		</md-list-item>
+	</div>
+</md-card> -->
