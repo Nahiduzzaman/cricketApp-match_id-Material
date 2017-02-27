@@ -6,7 +6,7 @@
 		    constructor.$inject = ['$stateParams','StatisticFactory','$scope','$window','$state'];
 		    function constructor($stateParams,StatisticFactory,$scope,$window,$state) {
 		    	var vm = this;
-		    	vm.over_to_be_played = 1;
+		    	vm.over_to_be_played = 2;
 		    	var gameData = [];
 		    	var allmatchData = [];
 		    	var lastMatchData = [];
@@ -16,19 +16,24 @@
 		            localStorage.removeItem("gameData");
 		            localStorage.removeItem("teamData");
 		            $window.location.reload();
-		        }		      	
+		        }
 
+
+		        //When user clicks on FINIS button current match added to match stack and after that current match data was removed 
+		        //and user redirects to "/start" page, where user can initialize a newgame.
 		      	vm.newGame = function(){
 		      		allmatchData = StatisticFactory.newgame();
 		      		localStorage.setItem("matchData", JSON.stringify(allmatchData));
 		      		vm.resetData();
 		      	}
 		      
+		      	//This function bowls, if NB or WD states re-initializes, whenever this function calls route changes that means 
+		      	//controller get re-initializes
 		      	vm.bowl = function(){
-		      		gameData = StatisticFactory.play();
+		      		gameData = StatisticFactory.play(); //get the gamedata
 		      		console.log(gameData);
 		      		vm.getMatchId();
-		      		localStorage.setItem("gameData", JSON.stringify(gameData));
+		      		localStorage.setItem("gameData", JSON.stringify(gameData)); 
 		            vm.gameData = JSON.parse(localStorage.getItem("gameData"));
 		      		console.log('gameData',vm.gameData);
 		            if(vm.gameData[vm.gameData.length-1].score == 'WD' || vm.gameData[vm.gameData.length-1].score == 'NB' ){

@@ -86,8 +86,7 @@
 
 
 		        return {
-		        	setMatch_id: function(){
-				    	
+		        	setMatch_id: function(){    	
 		            	console.log('match_id',match_id);
 		            },
 
